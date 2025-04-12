@@ -7,21 +7,21 @@ from report_generator import generate_pdf
 import pyautogui
 from PIL import ImageGrab
 
-# 🖼️ GUI Setup
+# GUI Setup
 root = tk.Tk()
 root.title("🛠 Bug Report Generator")
 root.geometry("800x720")
 root.configure(bg="#dbeafe")  # Light blue background
 
-# 🧩 Centered container
+# Centered container
 container = tk.Frame(root, bg="#dbeafe")
 container.pack(expand=True, fill="both")
 
-# 🌈 Stylish card-like frame
+# Stylish card-like frame
 card_frame = tk.Frame(container, bg="#ffffff", bd=2, relief="groove")
 card_frame.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
 
-# Optional heading
+# heading
 heading = tk.Label(card_frame, text="🐞 Bug Report Generator", font=("Helvetica", 18, "bold"), bg="#ffffff", fg="#1e40af")
 heading.pack(pady=15)
 
@@ -29,7 +29,6 @@ heading.pack(pady=15)
 title_label = tk.Label(card_frame, text="Bug Title", font=("Arial", 12, "bold"), bg="#ffffff")
 title_label.pack(pady=(10, 0))
 
-# Title Entry with off-white background
 title_entry = tk.Entry(card_frame, width=55, font=("Arial", 12), bg="#f7fafc", bd=3, relief="solid")
 title_entry.pack(pady=(0, 10))
 
@@ -37,7 +36,6 @@ title_entry.pack(pady=(0, 10))
 desc_label = tk.Label(card_frame, text="Bug Description", font=("Arial", 12, "bold"), bg="#ffffff")
 desc_label.pack()
 
-# Description Text Box with off-white background
 desc_text = tk.Text(card_frame, height=6, width=55, font=("Arial", 12), bg="#f7fafc", bd=3, relief="solid")
 desc_text.pack(pady=(0, 10))
 
@@ -98,7 +96,7 @@ def generate_final_report():
         messagebox.showwarning("No Bugs", "No bugs to report.")
         return
 
-    # 🛠️ FIX: Prompt for save location
+    # save location
     file_path = filedialog.asksaveasfilename(defaultextension=".pdf", filetypes=[("PDF files", "*.pdf")])
     if not file_path:
         messagebox.showwarning("No File Selected", "No file location selected, report generation canceled.")

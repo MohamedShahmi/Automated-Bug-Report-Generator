@@ -9,7 +9,7 @@ from PIL import ImageGrab
 
 # GUI Setup
 root = tk.Tk()
-root.title("🛠 Bug Report Generator")
+root.title("Bug Report Generator")
 root.geometry("800x720")
 root.configure(bg="#dbeafe")  # Light blue background
 

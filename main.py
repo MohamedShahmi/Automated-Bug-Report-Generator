@@ -29,14 +29,14 @@ heading = ctk.CTkLabel(card_frame, text="🐞 Bug Report Generator", font=("Helv
 heading.pack(pady=15)
 
 # Bug Title
-title_label = ctk.CTkLabel(card_frame, text="Bug Title", font=("Arial", 12, "bold"))
+title_label = ctk.CTkLabel(card_frame, text="Bug Title", font=("Helvetica", 14, "bold"))
 title_label.pack(pady=(10, 0))
 
-title_entry = ctk.CTkEntry(card_frame, width=400, height=40, font=("Arial", 12), corner_radius=15, border_width=1, border_color="#cbd5e1", fg_color="#f8fafc")
+title_entry = ctk.CTkEntry(card_frame, width=400, height=40, font=("Helvetica", 14), corner_radius=15, border_width=1, border_color="#cbd5e1", fg_color="#f8fafc")
 title_entry.pack(pady=(0, 10))
 
 # Bug Description
-desc_label = ctk.CTkLabel(card_frame, text="Bug Description", font=("Arial", 12, "bold"))
+desc_label = ctk.CTkLabel(card_frame, text="Bug Description", font=("Helvetica", 14, "bold"))
 desc_label.pack()
 
 desc_text = ctk.CTkTextbox(

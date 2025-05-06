@@ -66,6 +66,7 @@ def select_log_file():
         log_text = read_log_file(filepath)
         log_label.configure(text=os.path.basename(filepath), text_color="green")
     else:
+        log_text = ""
         log_label.configure(text="No log file selected", text_color="red")
 
 
@@ -81,16 +82,20 @@ def take_or_upload_screenshot():
             screenshot_path = save_path
             screenshot_label.configure(text="Screenshot saved!", text_color="green")
         else:
+            screenshot_path = None
             screenshot_label.configure(text="No screenshot saved", text_color="red")
     else:
-        screenshot_path = filedialog.askopenfilename(title="Select Screenshot", filetypes=[("Image Files", "*.png;*.jpg;*.jpeg;*.bmp;*.gif")])
-        if screenshot_path:
+        filepath = filedialog.askopenfilename(title="Select Screenshot", filetypes=[("Image Files", "*.png;*.jpg;*.jpeg;*.bmp;*.gif")])
+        if filepath:
+            screenshot_path = filepath
             screenshot_label.configure(text=os.path.basename(screenshot_path), text_color="green")
         else:
+            screenshot_path = None
             screenshot_label.configure(text="No screenshot selected", text_color="red")
 
 
 def add_bug_to_report():
+    global log_text, screenshot_path
     title = title_entry.get()
     desc = desc_text.get("1.0", "end").strip()
 
@@ -100,8 +105,14 @@ def add_bug_to_report():
 
     add_bug(title, desc, log_text, screenshot_path)
     messagebox.showinfo("Added", "Bug added to the report list.")
+
+    # Reset fields
     title_entry.delete(0, "end")
     desc_text.delete("1.0", "end")
+    log_text = ""
+    screenshot_path = None
+    log_label.configure(text="No log file selected", text_color="red")
+    screenshot_label.configure(text="No screenshot selected", text_color="red")
 
 
 def generate_final_report():

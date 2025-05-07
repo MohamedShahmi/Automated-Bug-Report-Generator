@@ -21,7 +21,7 @@ container = ctk.CTkFrame(root, fg_color="#dbeafe", corner_radius=0)
 container.pack(expand=True, fill="both")
 
 # Card-style frame
-card_frame = ctk.CTkFrame(container, fg_color="#ffffff", corner_radius=20)
+card_frame = ctk.CTkFrame(container, fg_color="#FFF8DC", corner_radius=20)
 card_frame.place(relx=0.5, rely=0.5, anchor="center")
 
 # Heading

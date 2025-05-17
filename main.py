@@ -14,14 +14,14 @@ ctk.set_default_color_theme("blue")
 root = ctk.CTk()
 root.title("Bug Report Generator")
 root.geometry("800x720")
-root.configure(bg="#dbeafe")
+root.configure(bg="#c7d2fe")
 
 # Centered container
-container = ctk.CTkFrame(root, fg_color="#dbeafe", corner_radius=0)
+container = ctk.CTkFrame(root, fg_color="#c7d2fe", corner_radius=0)
 container.pack(expand=True, fill="both")
 
 # Card-style frame
-card_frame = ctk.CTkFrame(container, fg_color="#FFF8DC", corner_radius=20)
+card_frame = ctk.CTkFrame(container, fg_color="#a5b4fc", corner_radius=20)
 card_frame.place(relx=0.5, rely=0.5, anchor="center")
 
 # Heading
@@ -32,7 +32,16 @@ heading.pack(pady=15)
 title_label = ctk.CTkLabel(card_frame, text="Bug Title", font=("Helvetica", 14, "bold"))
 title_label.pack(pady=(10, 0))
 
-title_entry = ctk.CTkEntry(card_frame, width=400, height=40, font=("Helvetica", 14), corner_radius=15, border_width=1, border_color="#cbd5e1", fg_color="#f8fafc")
+title_entry = ctk.CTkEntry(
+    card_frame,
+    width=400,
+    height=40,
+    font=("Helvetica", 14),
+    corner_radius=15,
+    border_width=1,
+    border_color="#cbd5e1",
+    fg_color="#e0e7ef"  # Changed from #f8fafc to a soft gray-blue
+)
 title_entry.pack(pady=(0, 10))
 
 # Bug Description
@@ -47,7 +56,7 @@ desc_text = ctk.CTkTextbox(
     corner_radius=15,
     border_width=1,
     border_color="#cbd5e1",
-    fg_color="#f8fafc",
+    fg_color="#e0e7ef",  # Changed from #f8fafc to match entry field
     text_color="black"
 )
 desc_text.pack(pady=(0, 10))
